@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Character Details | Disney Cutieverse</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="detalle.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✨ Disney <span>Cutieverse</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#personajes">Personajes</a>
+            <a href="index.html#api-lab">API Lab</a>
+        </nav>
+
+    </header>
+
+    <main class="detail-page">
+
+        <!-- VOLVER AL CATÁLOGO -->
+        <a href="index.html#personajes" class="back-link">
+            ← Volver a personajes
+        </a>
+
+        <!-- ESTADO DE CARGA -->
+        <p id="detalle-estado" role="status">
+            Cargando información del personaje... ♡
+        </p>
+
+        <!-- INFORMACIÓN DEL PERSONAJE -->
+        <div id="detalle-contenido" hidden>
+
+            <section class="detail-hero">
+
+                <div class="detail-image" id="detalle-imagen">
+                </div>
+
+                <div class="detail-intro">
+
+                    <span class="section-tag">
+                        ✦ CHARACTER PROFILE ✦
+                    </span>
+
+                    <h1 id="detalle-nombre"></h1>
+
+                    <p>
+                        Descubre sus apariciones,
+                        aventuras y conexiones
+                        dentro del universo Disney.
+                    </p>
+
+                    <span id="detalle-id" class="detail-id"></span>
+
+                </div>
+
+            </section>
+
+            <!-- INFORMACIÓN ADICIONAL -->
+            <section class="detail-information">
+
+                <div class="section-header">
+                    <span class="section-tag">
+                        ♡ DISCOVER MORE
+                    </span>
+
+                    <h2>Everything about me!</h2>
+
+                    <p>
+                        Conoce más sobre este personaje.
+                    </p>
+                </div>
+
+                <div class="detail-grid">
+
+                    <article class="detail-card">
+                        <h3>🎬 Películas</h3>
+                        <ul id="detalle-peliculas"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>📺 Series</h3>
+                        <ul id="detalle-series"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>🌸 Cortometrajes</h3>
+                        <ul id="detalle-cortos"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>🎮 Videojuegos</h3>
+                        <ul id="detalle-videojuegos"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>💕 Aliados</h3>
+                        <ul id="detalle-aliados"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>💜 Enemigos</h3>
+                        <ul id="detalle-enemigos"></ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>🏰 Atracciones Disney</h3>
+                        <ul id="detalle-parques"></ul>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Disney Cutieverse ♡</p>
+        <p>Proyecto de Diseño de Internet</p>
+        <p>Información obtenida mediante Disney API</p>
+    </footer>
+
+</body>
+</html>

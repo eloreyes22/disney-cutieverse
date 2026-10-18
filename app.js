@@ -129,8 +129,25 @@ function crearTarjeta(personaje) {
         aparicion.textContent = "✨ Personaje Disney";
     }
 
+     
     informacion.appendChild(nombre);
     informacion.appendChild(aparicion);
+
+    // ENLACE A LA FICHA DEL PERSONAJE
+
+    const enlaceDetalles = document.createElement("a");
+
+    enlaceDetalles.href =
+    `detalle.html?id=${encodeURIComponent(personaje._id)}`;
+
+    enlaceDetalles.target = "_blank";
+    enlaceDetalles.rel = "noopener noreferrer";
+
+    enlaceDetalles.className = "detail-link";
+    enlaceDetalles.textContent = "Ver detalles ♡";
+
+    informacion.appendChild(enlaceDetalles);
+
 
     tarjeta.appendChild(imagenContenedor);
     tarjeta.appendChild(informacion);

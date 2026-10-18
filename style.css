@@ -671,3 +671,293 @@ footer p:first-child {
 .filters {
     display: none;
 }
+
+
+/* ==========================================
+   DISNEY CUTIEVERSE
+   PÁGINA DE DETALLES
+========================================== */
+
+/* CONTENEDOR PRINCIPAL */
+
+.detail-page {
+    width: 90%;
+    max-width: 1250px;
+    min-height: 75vh;
+    margin: 0 auto;
+    padding: 45px 0 90px;
+}
+
+/* BOTÓN PARA REGRESAR */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background: white;
+    color: var(--purple);
+    font-weight: 800;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: var(--purple);
+    color: white;
+    transform: translateX(-5px);
+}
+
+/* MENSAJE DE CARGA */
+
+#detalle-estado {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--purple);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* PORTADA DEL PERSONAJE */
+
+.detail-hero {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+    gap: 60px;
+
+    padding: 60px;
+    border-radius: 35px;
+
+    background: linear-gradient(
+        125deg,
+        #ffe0ee,
+        #f0e4ff,
+        #e1f3ff
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* DECORACIÓN */
+
+.detail-hero::after {
+    content: "✦";
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 55px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* IMAGEN */
+
+.detail-image {
+    min-height: 350px;
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--pink);
+    font-size: 90px;
+}
+
+.detail-image img {
+    width: 100%;
+    max-height: 370px;
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 15px 20px rgba(89, 63, 117, 0.15)
+    );
+
+    animation: flotar 4s ease-in-out infinite;
+}
+
+/* INFORMACIÓN PRINCIPAL */
+
+.detail-intro {
+    position: relative;
+    z-index: 1;
+}
+
+.detail-intro .section-tag {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.detail-intro h1 {
+    margin: 25px 0;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    color: #574775;
+}
+
+.detail-intro p {
+    max-width: 500px;
+    color: #796c91;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.detail-id {
+    display: inline-block;
+    padding: 12px 22px;
+    background: white;
+    border-radius: 30px;
+    color: var(--purple);
+    font-weight: 800;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================================
+   INFORMACIÓN ADICIONAL
+========================================== */
+
+.detail-information {
+    padding-top: 75px;
+}
+
+/* TARJETAS DE INFORMACIÓN */
+
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+
+.detail-card {
+    background: white;
+    border: 1px solid #f0e6fb;
+    border-radius: 25px;
+
+    padding: 28px;
+    min-height: 0;
+
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(147, 112, 219, 0.18);
+}
+
+.detail-card h3 {
+    font-size: 21px;
+    color: #68538d;
+    margin-bottom: 22px;
+
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f6edff;
+}
+
+/* LISTAS DE PELÍCULAS, SERIES Y MÁS */
+
+.detail-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    list-style: none;
+    padding: 0;
+}
+
+.detail-card li {
+    background: linear-gradient(
+        120deg,
+        #fff1f7,
+        #f5efff
+    );
+
+    padding: 12px 15px;
+    border-radius: 12px;
+
+    font-size: 14px;
+    line-height: 1.6;
+    color: #76678d;
+
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVE
+========================================== */
+
+@media (max-width: 950px) {
+
+    .detail-hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .detail-intro p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-image {
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .detail-page {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .detail-hero {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    .detail-image {
+        min-height: 250px;
+        padding: 20px;
+    }
+
+    .detail-image img {
+        max-height: 260px;
+    }
+
+    .detail-intro h1 {
+        font-size: 38px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-card {
+        min-height: auto;
+    }
+
+    .detail-information {
+        padding-top: 50px;
+    }
+}
