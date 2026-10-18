@@ -1,0 +1,673 @@
+
+/* =========================================
+   DISNEY CUTIEVERSE
+   ESTILOS GENERALES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --pink: #ff79b0;
+    --pink-light: #ffe4f0;
+    --purple: #9370db;
+    --purple-light: #eee6ff;
+    --background: #faf8ff;
+    --text: #49415f;
+    --muted: #89819b;
+    --white: #ffffff;
+    --shadow: 0 12px 35px rgba(143, 110, 185, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 25px rgba(150, 110, 180, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-weight: 800;
+    color: var(--text);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+/* =========================================
+   HERO / PORTADA
+========================================= */
+
+.hero {
+    margin: 35px auto;
+    width: 90%;
+    max-width: 1400px;
+    min-height: 460px;
+    padding: 70px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    border-radius: 35px;
+    background: linear-gradient(
+        120deg,
+        #ffe1ef 0%,
+        #f2e5ff 50%,
+        #e2f4ff 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 28px;
+    right: 48%;
+    font-size: 45px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    right: -90px;
+    bottom: -140px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 570px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.13;
+    margin: 25px 0;
+    color: #51436d;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--pink);
+}
+
+.hero p {
+    max-width: 470px;
+    line-height: 1.9;
+    font-size: 16px;
+    color: #756c8c;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 16px 30px;
+    color: white;
+    font-weight: 800;
+    border-radius: 50px;
+    background: linear-gradient(120deg, #ff82b8, #b28aff);
+    box-shadow: 0 8px 20px rgba(255, 121, 176, 0.3);
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(255, 121, 176, 0.4);
+}
+
+/* Espacio reservado para imagen desde la API */
+
+.hero-image {
+    flex: 0 0 38%;
+    min-height: 310px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-image:empty::before {
+    content: "♡";
+    font-size: 170px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 20px rgba(95, 75, 135, 0.12));
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.characters-section,
+.api-section {
+    max-width: 1400px;
+    width: 90%;
+    margin: auto;
+    padding: 75px 3%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    color: #584b76;
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: var(--muted);
+}
+
+/* =========================================
+   BUSCADOR
+========================================= */
+
+.search-container {
+    max-width: 710px;
+    margin: 35px auto 25px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 50px;
+    border: 1px solid #f1e6ff;
+    box-shadow: var(--shadow);
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 14px 23px;
+    background: transparent;
+    color: var(--text);
+}
+
+.search-container input::placeholder {
+    color: #ada5bc;
+}
+
+.search-container button {
+    border: none;
+    border-radius: 50px;
+    background: var(--purple);
+    color: white;
+    padding: 14px 28px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: var(--pink);
+}
+
+/* =========================================
+   FILTROS
+========================================= */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    border: 1px solid #eadcfb;
+    background: white;
+    color: #8c7ba8;
+    padding: 11px 24px;
+    border-radius: 30px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--purple);
+    color: white;
+    border-color: var(--purple);
+}
+
+#results-info {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   TARJETAS DE PERSONAJES
+========================================= */
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.character-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #f2ebfa;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 40px rgba(143, 110, 185, 0.2);
+}
+
+.character-image {
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe6f1, #e9e5ff);
+    padding: 22px;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.character-info {
+    padding: 23px;
+    text-align: center;
+}
+
+.character-info h3 {
+    font-size: 21px;
+    color: #554a70;
+    margin-bottom: 12px;
+}
+
+.character-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.character-info button {
+    border: none;
+    background: #f5e9ff;
+    color: var(--purple);
+    font-weight: 800;
+    border-radius: 30px;
+    padding: 11px 17px;
+    transition: 0.3s;
+}
+
+.character-info button:hover {
+    background: var(--purple);
+    color: white;
+}
+
+/* =========================================
+   PAGINACIÓN
+========================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.pagination button {
+    border: none;
+    padding: 11px 17px;
+    background: white;
+    color: var(--purple);
+    border-radius: 12px;
+    font-weight: 800;
+}
+
+.pagination button:hover {
+    background: var(--purple);
+    color: white;
+}
+
+/* =========================================
+   API LABORATORY
+========================================= */
+
+.api-section {
+    padding-top: 50px;
+    padding-bottom: 95px;
+}
+
+.api-panel {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 24px;
+    background: #262039;
+    color: white;
+    box-shadow: 0 15px 35px rgba(44, 32, 69, 0.2);
+}
+
+#api-status {
+    color: #b9f4d2;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#api-time {
+    color: #c6b9dc;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+#api-json {
+    background: #181426;
+    padding: 25px;
+    border-radius: 15px;
+    color: #e7d8ff;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    max-height: 400px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MODAL DE PERSONAJES
+========================================= */
+
+.character-modal {
+    width: min(92%, 700px);
+    max-height: 85vh;
+    margin: auto;
+    padding: 30px;
+    border: none;
+    border-radius: 28px;
+    background: white;
+    color: var(--text);
+    box-shadow: 0 25px 80px rgba(30, 20, 50, 0.25);
+    overflow-y: auto;
+}
+
+.character-modal::backdrop {
+    background: rgba(35, 25, 55, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+#close-modal {
+    display: block;
+    margin-left: auto;
+    border: none;
+    background: var(--pink-light);
+    color: var(--pink);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    background: #f0e7ff;
+    padding: 35px 20px;
+    color: #807198;
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer p:first-child {
+    color: var(--purple);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 21px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 7%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-image {
+        width: 80%;
+        min-height: 250px;
+    }
+
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-container button {
+        padding: 13px 16px;
+    }
+
+    .hero {
+        margin-top: 15px;
+        border-radius: 23px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .characters-section,
+    .api-section {
+        width: 94%;
+    }
+}
+
+
+/* =========================================
+   CATÁLOGO DESLIZABLE
+========================================= */
+
+.characters-grid {
+    max-height: 760px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px 12px 20px 5px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #d4b5ff #f5efff;
+}
+
+/* Barra de desplazamiento en Chrome y Edge */
+
+.characters-grid::-webkit-scrollbar {
+    width: 10px;
+}
+
+.characters-grid::-webkit-scrollbar-track {
+    background: #f5efff;
+    border-radius: 20px;
+}
+
+.characters-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #ff9bc7,
+        #b99aff
+    );
+    border-radius: 20px;
+}
+
+.characters-grid::-webkit-scrollbar-thumb:hover {
+    background: #a87bef;
+}
+
+/* Mensaje de paginación */
+
+.pagination p {
+    color: #9984af;
+    font-weight: 700;
+    padding: 15px;
+}
+
+/* Ocultamos favoritos hasta programarlos */
+
+.filters {
+    display: none;
+}

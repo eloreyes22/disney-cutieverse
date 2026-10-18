@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Cutieverse | Magical World</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <a href="#inicio" class="logo">
+            ✨ Disney <span>Cutieverse</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#personajes">Personajes</a>
+            <a href="#api-lab">API Lab</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PORTADA PRINCIPAL -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+                <span class="hero-badge">
+                    ✦ YOUR MAGICAL UNIVERSE ✦
+                </span>
+
+                <h1>
+                    A little bit of
+                    <span>Disney magic!</span>
+                </h1>
+
+                <p>
+                    Explora un mundo lleno de magia,
+                    ternura y aventuras. Descubre a tus
+                    personajes favoritos de Disney.
+                </p>
+
+                <a href="#personajes" class="btn-primary">
+                    Explore Characters ♡
+                </a>
+            </div>
+
+            <div class="hero-image" id="hero-image">
+                <!-- Imagen obtenida mediante la API -->
+            </div>
+
+        </section>
+
+        <!-- CATÁLOGO DE PERSONAJES -->
+        <section class="characters-section" id="personajes">
+
+            <div class="section-header">
+                <span class="section-tag">♡ THE CUTEST COLLECTION</span>
+                <h2>Meet our characters</h2>
+                <p>Encuentra a tus personajes favoritos.</p>
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="search-container">
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search your favorite character..."
+                    autocomplete="off"
+                    aria-label="Buscar personaje"
+                >
+
+                <button id="search-btn">
+                    Buscar ♡
+                </button>
+            </div>
+
+            <!-- FILTROS -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    Todos
+                </button>
+
+                <button class="filter-btn" data-filter="favorites">
+                    ♡ Favoritos
+                </button>
+            </div>
+
+            <!-- RESULTADOS -->
+            <p id="results-info"></p>
+
+            <div class="characters-grid" id="characters-grid">
+                <!-- Las tarjetas se generan con JavaScript -->
+            </div>
+
+            <!-- PAGINACIÓN -->
+            <div class="pagination" id="pagination"></div>
+
+        </section>
+
+        <!-- LABORATORIO DE API -->
+        <section class="api-section" id="api-lab">
+
+            <div class="section-header">
+                <span class="section-tag">✦ DEVELOPER ZONE</span>
+                <h2>API Laboratory</h2>
+                <p>
+                    Explora las peticiones HTTP y los datos
+                    que devuelve la Disney API.
+                </p>
+            </div>
+
+            <div class="api-panel">
+                <p id="api-status">Esperando petición...</p>
+                <p id="api-time">Tiempo de respuesta: --</p>
+
+                <pre id="api-json">Sin datos todavía.</pre>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- VENTANA DE DETALLES -->
+    <dialog id="character-modal" class="character-modal">
+        <button id="close-modal" aria-label="Cerrar ventana">
+            ✕
+        </button>
+
+        <div id="modal-content">
+            <!-- Información detallada del personaje -->
+        </div>
+    </dialog>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made with ♡ | Disney Cutieverse</p>
+        <p>Proyecto académico de Diseño de Internet</p>
+        <p>Datos proporcionados por Disney API.</p>
+    </footer>
+
+</body>
+</html>
